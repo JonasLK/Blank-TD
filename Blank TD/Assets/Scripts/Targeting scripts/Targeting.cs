@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Targeting : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
     public float range = 20f;
 
     public string enemyTag = "Enemy";
+
+    public Transform partToRotate;
 
     void Start()
     {
@@ -41,7 +43,14 @@ public class Targeting : MonoBehaviour
 
     void Update()
     {
-        
+        if (target == null)
+            return;
+
+        Vector3 dir = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = lookRotation.eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+
     }
 
     private void OnDrawGizmosSelected()
