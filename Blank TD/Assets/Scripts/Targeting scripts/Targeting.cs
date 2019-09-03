@@ -31,7 +31,10 @@ public class Targeting : MonoBehaviour
             {
                 target = nearestEnemy.transform;
             }
-            
+            else
+            {
+                target = null;
+            }
         }
     }
 
