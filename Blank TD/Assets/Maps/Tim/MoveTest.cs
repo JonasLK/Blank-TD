@@ -55,21 +55,21 @@ public class MoveTest : MonoBehaviour
             }
         }
 
-        if (Input.GetButton("Sprint"))
-        {
-            runSpeed = runningSpeed;
-        }
+       // if (Input.GetButton("Sprint"))
+       // {
+       //     runSpeed = runningSpeed;
+       // }
 
-        if (Input.GetButtonUp("Sprint"))
-        {
-            runSpeed = walkSpeed;
-        }
+        //if (Input.GetButtonUp("Sprint"))
+        //{
+       //     runSpeed = walkSpeed;
+       // }
 
         speed1 = Input.GetAxis("Vertical");
-        m_Animator.SetFloat("Speed", speed1);
+//m_Animator.SetFloat("Speed", speed1);
 
-        sprint = Input.GetButton("Sprint");
-        m_Animator.SetBool("Sprint", sprint);
+        //sprint = Input.GetButton("Sprint");
+       // m_Animator.SetBool("Sprint", sprint);
 
     }
 

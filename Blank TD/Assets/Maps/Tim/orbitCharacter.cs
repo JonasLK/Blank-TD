@@ -56,21 +56,9 @@ public class orbitCharacter : MonoBehaviour
     void Update()
     {
 
-        //Move the Player with left  right button press together
-        if (Input.GetMouseButton(1) & Input.GetMouseButton(0))
-        {
-            float targetRotationAngle = target.eulerAngles.y;
-            float currentRotationAngle = transform.eulerAngles.y;
-            xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, rotationDampening * Time.deltaTime);
-            target.transform.Rotate(0, Input.GetAxis("Mouse X") * xSpeed * 0.02f, 0);
-            xDeg += Input.GetAxis("Mouse X") * targetSpeed * 0.02f;
-            target.transform.Translate(Vector3.forward * targetSpeed * Time.deltaTime);
-        }
     }
 
-    /**
-     * Camera logic on LateUpdate to only update after all character movement logic has been handled.
-     */
+   
     void LateUpdate()
     {
         Vector3 vTargetOffset;
@@ -80,19 +68,20 @@ public class orbitCharacter : MonoBehaviour
             return;
 
         // If either mouse buttons are down, let the mouse govern camera position
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             xDeg += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
             yDeg -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
-        }
-        //Reset the camera angle and Rotate the Target Around the World!
-        else if (Input.GetMouseButton(1))
-        {
             float targetRotationAngle = target.eulerAngles.y;
             float currentRotationAngle = transform.eulerAngles.y;
             xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, rotationDampening * Time.deltaTime);
             target.transform.Rotate(0, Input.GetAxis("Mouse X") * xSpeed * 0.02f, 0);
             xDeg += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
+        //}
+        //Reset the camera angle and Rotate the Target Around the World!
+        //else if (Input.GetMouseButton(1))
+        //{
+            
         }
         if (Input.GetMouseButtonDown(1))
         {
@@ -104,24 +93,14 @@ public class orbitCharacter : MonoBehaviour
             Cursor.visible = true;
         }
 
-        //if (Input.GetButton("Horizontal"))
+        
+         
+        else if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0);
         //{
-          //  float targetRotationAngle = target.eulerAngles.y;
-          //  float currentRotationAngle = transform.eulerAngles.y;
-          //  xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, rotationDampening * Time.deltaTime);
-          //  target.transform.Rotate(0, Input.GetAxis("Horizontal") * xSpeed * 0.02f, 0);
-          //  xDeg += Input.GetAxis("Horizontal") * xSpeed * 0.02f;
+       //     float targetRotationAngle = target.eulerAngles.y;
+       //     float currentRotationAngle = transform.eulerAngles.y;
+       //     xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, rotationDampening * Time.deltaTime);
        // }
-
-
-
-        // otherwise, ease behind the target if any of the directional keys are pressed
-        else if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
-        {
-            float targetRotationAngle = target.eulerAngles.y;
-            float currentRotationAngle = transform.eulerAngles.y;
-            xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, rotationDampening * Time.deltaTime);
-        }
 
         yDeg = ClampAngle(yDeg, yMinLimit, yMaxLimit);
 
@@ -171,12 +150,12 @@ public class orbitCharacter : MonoBehaviour
     {
         if (angle < -360)
         {
-            angle += 360;
+            angle += 0;
         }
             
         if (angle > 360)
         {
-            angle -= 360;
+            angle -= 180;
         }
             
         return Mathf.Clamp(angle, min, max);
