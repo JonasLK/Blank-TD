@@ -62,12 +62,10 @@ public class orbitCharacter : MonoBehaviour
     void LateUpdate()
     {
         Vector3 vTargetOffset;
-
-        // Don't do anything if target is not defined
+        
         if (!target)
             return;
-
-        // If either mouse buttons are down, let the mouse govern camera position
+        
         if (Input.GetMouseButton(1))
         {
             xDeg += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
@@ -77,10 +75,7 @@ public class orbitCharacter : MonoBehaviour
             xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, rotationDampening * Time.deltaTime);
             target.transform.Rotate(0, Input.GetAxis("Mouse X") * xSpeed * 0.02f, 0);
             xDeg += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-        //}
-        //Reset the camera angle and Rotate the Target Around the World!
-        //else if (Input.GetMouseButton(1))
-        //{
+
             
         }
         if (Input.GetMouseButtonDown(1))
@@ -93,53 +88,34 @@ public class orbitCharacter : MonoBehaviour
             Cursor.visible = true;
         }
 
-        
-         
-        else if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0);
-        //{
-       //     float targetRotationAngle = target.eulerAngles.y;
-       //     float currentRotationAngle = transform.eulerAngles.y;
-       //     xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, rotationDampening * Time.deltaTime);
-       // }
 
         yDeg = ClampAngle(yDeg, yMinLimit, yMaxLimit);
 
 
-        // set camera rotation
         Quaternion rotation = Quaternion.Euler(yDeg, xDeg, 0);
 
-        // calculate the desired distance
         desiredDistance -= Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * zoomRate * Mathf.Abs(desiredDistance);
         desiredDistance = Mathf.Clamp(desiredDistance, minDistance, maxDistance);
         correctedDistance = desiredDistance;
-
-        // calculate desired camera position
+        
         vTargetOffset = new Vector3(0, -targetHeight, 0);
         Vector3 position = target.position - (rotation * Vector3.forward * desiredDistance + vTargetOffset);
 
-        // check for collision using the true target's desired registration point as set by user using height
         RaycastHit collisionHit;
         Vector3 trueTargetPosition = new Vector3(target.position.x, target.position.y + targetHeight, target.position.z);
 
-        // if there was a collision, correct the camera position and calculate the corrected distance
         bool isCorrected = false;
         if (Physics.Linecast(trueTargetPosition, position, out collisionHit, collisionLayers.value))
         {
-            // calculate the distance from the original estimated position to the collision location,
-            // subtracting out a safety "offset" distance from the object we hit.  The offset will help
-            // keep the camera from being right on top of the surface we hit, which usually shows up as
-            // the surface geometry getting partially clipped by the camera's front clipping plane.
+            
             correctedDistance = Vector3.Distance(trueTargetPosition, collisionHit.point) - offsetFromWall;
             isCorrected = true;
         }
 
-        // For smoothing, lerp distance only if either distance wasn't corrected, or correctedDistance is more than currentDistance
         currentDistance = !isCorrected || correctedDistance > currentDistance ? Mathf.Lerp(currentDistance, correctedDistance, Time.deltaTime * zoomDampening) : correctedDistance;
 
-        // keep within legal limits
         currentDistance = Mathf.Clamp(currentDistance, minDistance, maxDistance);
 
-        // recalculate position based on the new currentDistance
         position = target.position - (rotation * Vector3.forward * currentDistance + vTargetOffset);
 
         transform.rotation = rotation;
