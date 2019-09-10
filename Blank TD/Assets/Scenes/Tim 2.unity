@@ -378,8 +378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957a49defd74ae4469b2a7ab2ad11d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  targetHeight: 70
+  target: {fileID: 261706764}
+  targetHeight: 2
   distance: 5
   offsetFromWall: 0.1
   maxDistance: 20
