@@ -4,19 +4,31 @@ using UnityEngine;
 
 public class NodeSnap : MonoBehaviour
 {
-    public Vector3 bTPosition;
-    public bool track;
+    public Material mater;
+    public Color ogColor;
+    public Color highlightColor;
+    public SnapManager snapManager;
+    public BuildingCheck ownBuildingCheck;
 
     void Start()
     {
-        
+        mater = GetComponent<Renderer>().material;
+        ogColor = mater.color;
+        snapManager = GameObject.Find("SnapManager").GetComponent<SnapManager>();
+        ownBuildingCheck = gameObject.GetComponent<BuildingCheck>();
     }
 
     void OnMouseEnter()
     {
-        if(track == true)
+        if(ownBuildingCheck.occupied == false)
         {
-            bTPosition = transform.position;
+            mater.color = highlightColor;
+            snapManager.Snap(transform.position);
         }
+    }
+
+    public void OnMouseExit()
+    {
+        mater.color = ogColor;
     }
 }

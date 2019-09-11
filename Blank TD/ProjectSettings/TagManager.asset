@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - BuyMenu
+  - Node
+  - TowerA
+  - Button 1
+  - Button 2
+  - button 3
   layers:
   - Default
   - TransparentFX
