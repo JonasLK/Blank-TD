@@ -15,4 +15,9 @@ public class SnapManager : MonoBehaviour
     {
         towerManager.ChangeBluePrintPosition(lastSnap);
     }
+
+    public void LastNode(GameObject lastNode)
+    {
+        towerManager.lastHoveredNode = lastNode;
+    }
 }

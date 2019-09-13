@@ -8,6 +8,7 @@ public class TowerManager : MonoBehaviour
     public Vector3 placePos;
     public GameObject blueprint;
     public GameObject lastPlacedTower;
+    public GameObject lastHoveredNode;
     public int towerToPlace;
     public List<GameObject> preTowers = new List<GameObject>();
     public List<GameObject> towers = new List<GameObject>();
@@ -31,13 +32,13 @@ public class TowerManager : MonoBehaviour
         placePos = newPos;
         if(placing == true)
         {
-        blueprint.transform.position = newPos;
+            blueprint.transform.position = newPos;
         }
     }
 
     public void Update()
     {
-        if(placing == true && Input.GetMouseButtonDown(0) && moneyManager.money >= towers[towerToPlace].GetComponent<OnTower>().cost)
+        if(placing == true && Input.GetMouseButtonDown(0) && moneyManager.money >= towers[towerToPlace].GetComponent<OnTower>().cost && lastHoveredNode.GetComponent<BuildingCheck>().occupied == false)
         {
             Destroy(blueprint);
             lastPlacedTower = Instantiate(towers[towerToPlace], placePos, Quaternion.identity);

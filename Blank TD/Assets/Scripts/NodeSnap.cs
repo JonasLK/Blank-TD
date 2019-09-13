@@ -24,6 +24,7 @@ public class NodeSnap : MonoBehaviour
         {
             mater.color = highlightColor;
             snapManager.Snap(transform.position);
+            snapManager.LastNode(gameObject);
         }
     }
 
