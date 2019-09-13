@@ -48,8 +48,8 @@ public class orbitCharacter : MonoBehaviour
         correctedDistance = distance;
 
         // Make the rigid body not change rotation
-        if (GetComponent<Rigidbody>())
-            GetComponent<Rigidbody>().freezeRotation = true;
+       // if (GetComponent<Rigidbody>())
+        //    GetComponent<Rigidbody>().freezeRotation = true;
     }
 
 
@@ -66,7 +66,7 @@ public class orbitCharacter : MonoBehaviour
         if (!target)
             return;
         
-        if (Input.GetMouseButton(1))
+       /* if (Input.GetMouseButton(1))
         {
             xDeg += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
             yDeg -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
@@ -77,8 +77,8 @@ public class orbitCharacter : MonoBehaviour
             xDeg += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
 
             
-        }
-        if (Input.GetMouseButtonDown(1))
+        }*/
+        /*if (Input.GetMouseButtonDown(1))
         {
             Cursor.visible = false;
 
@@ -86,7 +86,7 @@ public class orbitCharacter : MonoBehaviour
         if (Input.GetMouseButtonUp(1))
         {
             Cursor.visible = true;
-        }
+        }*/
 
 
         yDeg = ClampAngle(yDeg, yMinLimit, yMaxLimit);
