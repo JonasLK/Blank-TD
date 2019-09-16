@@ -37,6 +37,8 @@ public class orbitCharacter : MonoBehaviour
 
     public bool Rotationorstrafe;
 
+    
+
     void Start()
     {
         Vector3 angles = transform.eulerAngles;
@@ -47,48 +49,26 @@ public class orbitCharacter : MonoBehaviour
         desiredDistance = distance;
         correctedDistance = distance;
 
-        // Make the rigid body not change rotation
-       // if (GetComponent<Rigidbody>())
-        //    GetComponent<Rigidbody>().freezeRotation = true;
     }
 
 
     void Update()
     {
-
+       
     }
 
    
     void LateUpdate()
     {
+
+   
+
         Vector3 vTargetOffset;
         
         if (!target)
             return;
         
-       /* if (Input.GetMouseButton(1))
-        {
-            xDeg += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-            yDeg -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
-            float targetRotationAngle = target.eulerAngles.y;
-            float currentRotationAngle = transform.eulerAngles.y;
-            xDeg = Mathf.LerpAngle(currentRotationAngle, targetRotationAngle, rotationDampening * Time.deltaTime);
-            target.transform.Rotate(0, Input.GetAxis("Mouse X") * xSpeed * 0.02f, 0);
-            xDeg += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-
-            
-        }*/
-        /*if (Input.GetMouseButtonDown(1))
-        {
-            Cursor.visible = false;
-
-        }
-        if (Input.GetMouseButtonUp(1))
-        {
-            Cursor.visible = true;
-        }*/
-
-
+     
         yDeg = ClampAngle(yDeg, yMinLimit, yMaxLimit);
 
 
@@ -120,6 +100,8 @@ public class orbitCharacter : MonoBehaviour
 
         transform.rotation = rotation;
         transform.position = position;
+
+        
     }
 
     private static float ClampAngle(float angle, float min, float max)
