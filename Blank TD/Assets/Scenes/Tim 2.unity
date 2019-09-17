@@ -814,7 +814,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307164644}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -878,8 +878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0bba418e8253047b288906eaa92948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panningSpeed: 1
-  panningBorderSize: 10
+  panningSpeed: 20
+  panningBorderSize: 15
 --- !u!54 &307164650
 Rigidbody:
   m_ObjectHideFlags: 0
