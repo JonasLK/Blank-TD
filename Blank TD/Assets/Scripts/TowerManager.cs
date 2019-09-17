@@ -9,6 +9,7 @@ public class TowerManager : MonoBehaviour
     public GameObject blueprint;
     public GameObject lastPlacedTower;
     public GameObject lastHoveredNode;
+    public GameObject lastSellingTower;
     public int towerToPlace;
     public List<GameObject> preTowers = new List<GameObject>();
     public List<GameObject> towers = new List<GameObject>();
@@ -34,6 +35,11 @@ public class TowerManager : MonoBehaviour
         {
             blueprint.transform.position = newPos;
         }
+    }
+
+    public void SellingTower(GameObject sellingTower)
+    {
+        lastSellingTower = sellingTower;
     }
 
     public void Update()

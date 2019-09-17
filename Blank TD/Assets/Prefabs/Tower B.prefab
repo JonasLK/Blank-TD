@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8303555665509979066}
   - component: {fileID: 1432040849589174218}
+  - component: {fileID: 3345046145358232923}
+  - component: {fileID: 546838688972458615}
   m_Layer: 0
   m_Name: Tower B
   m_TagString: Untagged
@@ -48,7 +50,37 @@ MonoBehaviour:
   dpp: 0
   attackspeed: 0
   cost: 50
+  sellPrice: 0
   range: 0
+  sellButton: {fileID: 0}
+  moneyManager: {fileID: 0}
+--- !u!136 &3345046145358232923
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641818383221107131}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.1
+  m_Height: 0.4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!65 &546838688972458615
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641818383221107131}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.2, z: 0.5}
+  m_Center: {x: 0, y: 0.135, z: 0}
 --- !u!1 &7479174895098551732
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +92,6 @@ GameObject:
   - component: {fileID: 5598149639150153978}
   - component: {fileID: 8979986304859967533}
   - component: {fileID: 1445575236983084063}
-  - component: {fileID: 7416497361458121094}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -127,20 +158,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &7416497361458121094
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7479174895098551732}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9139356528372257351
 GameObject:
   m_ObjectHideFlags: 0
