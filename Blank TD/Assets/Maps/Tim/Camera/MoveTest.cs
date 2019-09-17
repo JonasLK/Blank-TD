@@ -21,7 +21,7 @@ public class MoveTest : MonoBehaviour
         if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panningBorderSize)
         {
             pos1.x += +panningSpeed * Time.deltaTime;
-       
+
         }
         if (Input.GetKey("s") || Input.mousePosition.y <= panningBorderSize)
         {
@@ -37,5 +37,6 @@ public class MoveTest : MonoBehaviour
         }
 
         transform.position = pos1;
-        
+
+    }
 }
