@@ -15,11 +15,14 @@ public class BuildingCheck : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && towerManage.placing == true)
+        if (towerManage.placing == true)
         {
-            if (towerManage.lastPlacedTower.transform.position == gameObject.transform.position)
+            if(towerManage.lastPlacedTower != null)
             {
-                turret = towerManage.lastPlacedTower;
+                if (towerManage.lastPlacedTower.transform.position == gameObject.transform.position)
+                {
+                    turret = towerManage.lastPlacedTower;
+                }
             }
         }
 

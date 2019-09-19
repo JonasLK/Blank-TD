@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8303555665509979066}
   - component: {fileID: 1432040849589174218}
-  - component: {fileID: 3345046145358232923}
   - component: {fileID: 546838688972458615}
   m_Layer: 0
   m_Name: Tower B
@@ -54,20 +53,8 @@ MonoBehaviour:
   range: 0
   sellButton: {fileID: 0}
   moneyManager: {fileID: 0}
---- !u!136 &3345046145358232923
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641818383221107131}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.1
-  m_Height: 0.4
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.4, z: 0}
+  towermanager: {fileID: 0}
+  sellButtonActive: 0
 --- !u!65 &546838688972458615
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -169,7 +156,6 @@ GameObject:
   - component: {fileID: 565100849624649017}
   - component: {fileID: 6810524379923264235}
   - component: {fileID: 5024380335489137920}
-  - component: {fileID: 4158204099581441199}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -236,16 +222,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4158204099581441199
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9139356528372257351}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
