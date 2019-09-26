@@ -9,8 +9,8 @@ public class DataBase
     //public float cameraSensitivity;
     //public float zoomSensitivity;
 
-    //public float masterVolume;
-    //public float sfx;
-    //public float music;
+    public float masterVolume;
+    public float sfx;
+    public float music;
 
 }
