@@ -26,7 +26,7 @@ public class XmlManager : MonoBehaviour
         //    menuScript = gameManager.GetComponent<MenuScript>();
         path = Application.persistentDataPath;
         print(path);
-       // SetSliderValues();
+        SetSliderValues();
     }
 
     public void SetSliderValues()
