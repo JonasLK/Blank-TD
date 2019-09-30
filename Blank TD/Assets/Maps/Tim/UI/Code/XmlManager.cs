@@ -12,6 +12,8 @@ public class XmlManager : MonoBehaviour
     public string fileName;
     public DataBase dataBase;
 
+    public Text test;
+
     GameObject gameManager;
     //GameObject camControl;
 
@@ -32,6 +34,7 @@ public class XmlManager : MonoBehaviour
     public void SetSliderValues()
     {
         dataBase = Load();
+        test.text = dataBase.masterVolume.ToString();
     //    menuScript.camSensitivity.value = dataBase.cameraSensitivity;
     //    zoomAndSelectTile.zoomIncrease = dataBase.zoomSensitivity;
       //  menuScript.volume.value = dataBase.masterVolume;
