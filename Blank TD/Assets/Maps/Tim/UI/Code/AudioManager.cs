@@ -1,38 +1,25 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
-    public AudioOption[] audioOptions;
-    private enum AudioGroups { Master, Music, SFX };
+    public AudioMixer masterMixer;
 
-    void Awake()
+    public void SetMasterVolume(float masterLvl)
     {
-        instance = GetComponent<AudioManager>();
+        masterMixer.SetFloat("masterVolume", masterLvl);
     }
 
-    void Start()
-    {
-        for (int i = 0; i < audioOptions.Length; i++)
+    public void SetSfxVolume(float sfxLvl)
         {
-            audioOptions[i].Initialize();
+        masterMixer.SetFloat("sfxVolume", sfxLvl);
         }
-    }
 
-}
+    public void SetMusicVolume(float musicLvl)
+        {
+        masterMixer.SetFloat("musicVolume", musicLvl);
+        }
 
-[System.Serializable]
-public class AudioOption
-{
-    public Slider slider;
-    public GameObject redX;
-    public string exposedParam;
-
-    public void Initialize()
-    {
-        slider.value = PlayerPrefs.GetFloat(exposedParam);
-    }
 }
