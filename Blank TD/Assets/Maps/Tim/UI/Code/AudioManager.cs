@@ -6,6 +6,12 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public AudioMixer masterMixer;
+    public AudioMixerGroup test;
+
+    private void Start()
+    {
+        Test();
+    }
 
     public void SetMasterVolume(float masterLvl)
     {
@@ -21,5 +27,15 @@ public class AudioManager : MonoBehaviour
         {
         masterMixer.SetFloat("musicVolume", musicLvl);
         }
+
+    void Test()
+    {
+        float mv;
+        masterMixer.GetFloat("masterVolume", out mv);
+        float muv;
+        masterMixer.GetFloat("musicVolume", out muv);
+        float sv;
+        masterMixer.GetFloat("sfxVolume", out sv);
+    }
 
 }

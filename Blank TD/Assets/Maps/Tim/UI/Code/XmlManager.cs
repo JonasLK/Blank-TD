@@ -4,6 +4,7 @@ using System.IO;
 using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class XmlManager : MonoBehaviour
 {
@@ -12,20 +13,15 @@ public class XmlManager : MonoBehaviour
     public string fileName;
     public DataBase dataBase;
 
-    public Text test;
+    public AudioMixer masterMixer;
+
 
     GameObject gameManager;
-    //GameObject camControl;
-
-    //MenuScript menuScript;
-    //ZoomAndSelectTile zoomAndSelectTile;
+   
 
     private void Start()
     {
         gameManager = GameObject.Find("GameManager");
-        //    camControl = GameObject.Find("CamControl");
-        //    zoomAndSelectTile = camControl.GetComponentInChildren<ZoomAndSelectTile>();
-        //    menuScript = gameManager.GetComponent<MenuScript>();
         path = Application.persistentDataPath;
         print(path);
         SetSliderValues();
@@ -34,26 +30,16 @@ public class XmlManager : MonoBehaviour
     public void SetSliderValues()
     {
         dataBase = Load();
-        test.text = dataBase.masterVolume.ToString();
-    //    menuScript.camSensitivity.value = dataBase.cameraSensitivity;
-    //    zoomAndSelectTile.zoomIncrease = dataBase.zoomSensitivity;
-      //  menuScript.volume.value = dataBase.masterVolume;
-     //   menuScript.sfx.value = dataBase.sfx;
-     //   menuScript.music.value = dataBase.music;
+       
     }
 
     public void Save()
     {
         dataBase = new DataBase();
 
-    //    //controls
-    //    dataBase.cameraSensitivity = menuScript.camSensitivity.value;
-    //    dataBase.zoomSensitivity = zoomAndSelectTile.zoomIncrease;
-
-        //volume
-      //  dataBase.masterVolume = menuScript.volume.value;
-      //  dataBase.sfx = menuScript.sfx.value;
-   //     dataBase.music = menuScript.music.value;
+        masterMixer.GetFloat("masterVolume", out dataBase.masterVolume);
+        masterMixer.GetFloat("musicVolume", out dataBase.music);
+        masterMixer.GetFloat("sfxVolume", out dataBase.sfx);
 
         var serializer = new XmlSerializer(typeof(DataBase));
         var stream = new FileStream(path + "/" + fileName, FileMode.Create);
