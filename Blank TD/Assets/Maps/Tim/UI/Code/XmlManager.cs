@@ -13,7 +13,10 @@ public class XmlManager : MonoBehaviour
     public string fileName;
     public DataBase dataBase;
 
-    public AudioMixer masterMixer;
+    public Slider master;
+    public Slider music;
+    public Slider sfx;
+
 
 
     GameObject gameManager;
@@ -30,16 +33,19 @@ public class XmlManager : MonoBehaviour
     public void SetSliderValues()
     {
         dataBase = Load();
-       
+
+        master.value = dataBase.master;
+        music.value = dataBase.music;
+        sfx.value = dataBase.sfx;
     }
 
     public void Save()
     {
         dataBase = new DataBase();
 
-        masterMixer.GetFloat("masterVolume", out dataBase.masterVolume);
-        masterMixer.GetFloat("musicVolume", out dataBase.music);
-        masterMixer.GetFloat("sfxVolume", out dataBase.sfx);
+        dataBase.master = master.value;
+        dataBase.music = music.value;
+        dataBase.sfx = sfx.value;
 
         var serializer = new XmlSerializer(typeof(DataBase));
         var stream = new FileStream(path + "/" + fileName, FileMode.Create);
