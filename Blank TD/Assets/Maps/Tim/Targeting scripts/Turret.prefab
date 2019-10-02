@@ -45,9 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c112dbaa96b0c4a4c8f9aa76de5e369a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   range: 8
+  attackDelay: 1
+  attackSpeed: 1
+  health: 0
+  damage: 10
   enemyTag: Enemy
-  partToRotate: {fileID: 4010822471956836804}
+  Rotatingtop: {fileID: 4010822471956836804}
 --- !u!1 &6103246062641825401
 GameObject:
   m_ObjectHideFlags: 0

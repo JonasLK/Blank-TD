@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -7,15 +8,17 @@ public class Health : MonoBehaviour
 
     public float maxHealth;
     public float currentHealth;
-
-    public GameObject healthbarPrefab;
+    
+    public GameObject healthbarfab;
     GameObject handy;
+    Image handyImg;
 
     public void Start()
     {
         currentHealth = maxHealth;
-        handy = Instantiate(healthbarPrefab, Vector3.zero, Quaternion.identity);
+        handy = Instantiate(healthbarfab, Vector3.zero, Quaternion.identity);
         handy.transform.SetParent(UIManager.healthCanvas.transform);
+        handyImg = handy.transform.Find("HealthBar").transform.Find("HealthBarEmpty").GetComponent<Image>();
     }
 
     public void Update()
@@ -28,14 +31,16 @@ public class Health : MonoBehaviour
 
     public void LateUpdate()
     {
-        handy.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1.5f, 0));
+        handy.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(2, 1.5f, 0));
     }
 
     public void Damage(float damage)
     {
         currentHealth -= damage;
-        if(currentHealth==0)
+        handyImg.fillAmount = currentHealth/maxHealth;
+        if(currentHealth <= 0)
         {
+            currentHealth = 0;
             Death();
         }
     }
@@ -43,6 +48,7 @@ public class Health : MonoBehaviour
    void Death()
     {
         Destroy(gameObject);
+        Destroy(handy);
     }
 
 }

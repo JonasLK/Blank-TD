@@ -8,7 +8,6 @@ public class Targeting : MonoBehaviour
     public float range = 20f;
     public float attackDelay;
     public float attackSpeed;
-    public float health;
     public float damage;
 
     public string enemyTag = "Enemy";
