@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
+    public void Start()
+    {
+
+    }
     void Update()
     {
-        gameObject.transform.position += Vector3.forward * Time.deltaTime;
+        gameObject.transform.Translate(transform.forward * Time.deltaTime);
     }
 }

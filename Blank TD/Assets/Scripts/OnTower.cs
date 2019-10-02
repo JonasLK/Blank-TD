@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class OnTower : MonoBehaviour
 {
-    public float dpp;
-    public float attackspeed;
     public int cost;
-    public float sellPrice;
-    public float range;
     public GameObject sellButton;
     public MoneyManager moneyManager;
     public TowerManager towermanager;
