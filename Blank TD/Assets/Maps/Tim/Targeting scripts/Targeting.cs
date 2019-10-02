@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Targeting : MonoBehaviour
 {
-    private Transform target;
+    public Transform target;
     public float range = 20f;
     public float attackDelay;
     public float attackSpeed;

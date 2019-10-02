@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
     {
         currentHealth = maxHealth;
         handy = Instantiate(healthbarPrefab, Vector3.zero, Quaternion.identity);
-
+        handy.transform.SetParent(UIManager.healthCanvas.transform);
     }
 
     public void Update()
@@ -24,6 +24,11 @@ public class Health : MonoBehaviour
         {
             Death();
         }
+    }
+
+    public void LateUpdate()
+    {
+        handy.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1.5f, 0));
     }
 
     public void Damage(float damage)
