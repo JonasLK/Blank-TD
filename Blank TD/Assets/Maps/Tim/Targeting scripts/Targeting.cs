@@ -6,10 +6,14 @@ public class Targeting : MonoBehaviour
 {
     private Transform target;
     public float range = 20f;
+    public float attackDelay;
+    public float attackSpeed;
+    public float health;
+    public float damage;
 
     public string enemyTag = "Enemy";
 
-    public Transform partToRotate;
+    public Transform Rotatingtop;
 
     void Start()
     {
@@ -49,8 +53,24 @@ public class Targeting : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = lookRotation.eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        Rotatingtop.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    
+        if (target != null)
+        {
+            if (attackDelay > attackSpeed)
+            {
+                Attack();
+                attackDelay = 0;
+            }
+            attackDelay += Time.deltaTime;
+        }
 
+
+    }
+
+    void Attack()
+    {
+        target.GetComponentInParent<Health>().Damage(damage);
     }
 
     private void OnDrawGizmosSelected()
