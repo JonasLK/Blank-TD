@@ -21,7 +21,7 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         spawner = GameObject.FindGameObjectWithTag("EnemySpawner");
-        WaveStart();
+        //WaveStart();
     }
 
     public void WaveStart()
@@ -53,7 +53,7 @@ public class WaveSpawner : MonoBehaviour
     {
         onefive = Random.Range(0, 6);
         fiveTwo = Random.Range(0, 3);
-        if(onefive == 5)
+        if (onefive == 5 && enemieStrengthGuageMax < enemies.Length)
         {
             enemieStrengthGuageMin += 1;
             enemieStrengthGuageMax += 1;
@@ -75,8 +75,8 @@ public class WaveSpawner : MonoBehaviour
         }*/
         if(enemiesSpawnedThisWave == enemyAmount)
         {
-            L();
             waveActive = false;
+            L();
             enemiesSpawnedThisWave = 0;
         }
     }

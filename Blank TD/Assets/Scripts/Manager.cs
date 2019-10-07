@@ -8,18 +8,21 @@ public class Manager : MonoBehaviour
     public TowerManager tower;
     public SnapManager snap;
     public GameObject sellButton;
+    public GameObject[] turnedOffGameObjects;
+    public int turndeOffGameObjectsIndicator;
 
     void Start()
     {
+
         money = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
         tower = GameObject.Find("TowerManager").GetComponent<TowerManager>();
         snap = GameObject.Find("SnapManager").GetComponent<SnapManager>();
         sellButton = GameObject.FindGameObjectWithTag("SellButton");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TurnedOffGameObject(GameObject aboutToTurnOff)
     {
-        
+        turnedOffGameObjects[turndeOffGameObjectsIndicator] = aboutToTurnOff;
+        turndeOffGameObjectsIndicator += 1;
     }
 }
