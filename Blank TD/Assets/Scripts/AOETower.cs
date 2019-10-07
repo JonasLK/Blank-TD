@@ -16,7 +16,7 @@ public class AOETower : MonoBehaviour
 
     public string enemyTag = "Enemy";
 
-    public Transform Rotatingtop;
+    //public Transform Rotatingtop;
 
     void Start()
     {

@@ -21,7 +21,7 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         spawner = GameObject.FindGameObjectWithTag("EnemySpawner");
-        //WaveStart();
+        WaveStart();
     }
 
     public void WaveStart()
