@@ -1127,7 +1127,8 @@ MonoBehaviour:
   - {fileID: 6122214697825539326, guid: 91f6b70695cb0de4290f2f93b85e8c8d, type: 3}
   spawner: {fileID: 0}
   waveCountdown: {fileID: 0}
-  waveCountdownInt: 0
+  waveCountdownInt: 20
+  timeBetweenWaves: 20
   enemyAmount: 5
   enemyAmountPlus: 0
   enemySelector: 0
