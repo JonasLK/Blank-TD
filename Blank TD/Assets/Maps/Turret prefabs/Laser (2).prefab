@@ -128,6 +128,7 @@ MonoBehaviour:
   range: 10
   attackDelay: 0
   attackSpeed: 0
+  partic: {fileID: 0}
   damage: 2
   enemyTag: Enemy
   Rotatingtop: {fileID: 9042784779332908419}
