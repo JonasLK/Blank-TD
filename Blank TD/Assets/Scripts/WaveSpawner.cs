@@ -80,17 +80,17 @@ public class WaveSpawner : MonoBehaviour
         }*/
         //waveCountdownInt -= Time.deltaTime;
         //waveCountdown.text = "Next Wave:" + Mathf.RoundToInt(waveCountdownInt).ToString();
-        if(waveCountdownInt <= 0)
-        {
-            EndOfWave();
-            waveCountdownInt = enemyAmount + timeBetweenWaves;
-            StartCoroutine(Wave());
-        }
+        //if(waveCountdownInt <= 0)
+        //{
+        //    EndOfWave();
+        //    waveCountdownInt = enemyAmount + timeBetweenWaves;
+        //    StartCoroutine(Wave());
+        //}
 
-        if (enemiesSpawnedThisWave == enemyAmount)
-        {
-            EndOfWave();
-        }
+        //if (enemiesSpawnedThisWave == enemyAmount)
+        //{
+        //    EndOfWave();
+        //}
         
     }
 
