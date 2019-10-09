@@ -9,7 +9,7 @@ public class Targeting1 : MonoBehaviour
     public float attackDelay;
     public float attackSpeed;
     public float damage;
-
+    public ParticleSystem parti;
     public string enemyTag = "Enemy";
 
     public Transform Rotatingtop;
@@ -70,6 +70,7 @@ public class Targeting1 : MonoBehaviour
     void Attack()
     {
         target.GetComponentInParent<Health>().Damage(damage);
+        parti.Play();
     }
 
     private void OnDrawGizmosSelected()

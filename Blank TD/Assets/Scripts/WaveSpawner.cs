@@ -25,8 +25,8 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         spawner = GameObject.FindGameObjectWithTag("EnemySpawner");
-        waveCountdown = GameObject.FindGameObjectWithTag("NextWaveCountdown").GetComponent<Text>();
-        //WaveStart();
+        //waveCountdown = GameObject.FindGameObjectWithTag("NextWaveCountdown").GetComponent<Text>();
+        WaveStart();
     }
 
     public void WaveStart()
@@ -78,8 +78,8 @@ public class WaveSpawner : MonoBehaviour
         {
             EndOfWaveRandom();
         }*/
-        waveCountdownInt -= Time.deltaTime;
-        waveCountdown.text = "Next Wave:" + Mathf.RoundToInt(waveCountdownInt).ToString();
+        //waveCountdownInt -= Time.deltaTime;
+        //waveCountdown.text = "Next Wave:" + Mathf.RoundToInt(waveCountdownInt).ToString();
         if(waveCountdownInt <= 0)
         {
             EndOfWave();
