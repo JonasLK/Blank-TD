@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TurnOffGameobject : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int turnedOffGameObjectIndexNumber;
+
     void Start()
     {
-        GameObject.Find("Manager").GetComponent<Manager>().TurnedOffGameObject(gameObject);
+        GameObject.Find("Manager").GetComponent<Manager>().TurnedOffGameObject(gameObject,turnedOffGameObjectIndexNumber);
         gameObject.SetActive(false);
     }
 

@@ -17,12 +17,10 @@ public class Manager : MonoBehaviour
         money = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
         tower = GameObject.Find("TowerManager").GetComponent<TowerManager>();
         snap = GameObject.Find("SnapManager").GetComponent<SnapManager>();
-        sellButton = GameObject.FindGameObjectWithTag("SellButton");
     }
 
-    public void TurnedOffGameObject(GameObject aboutToTurnOff)
+    public void TurnedOffGameObject(GameObject aboutToTurnOff,int indexNumber)
     {
-        turnedOffGameObjects[turndeOffGameObjectsIndicator] = aboutToTurnOff;
-        turndeOffGameObjectsIndicator += 1;
+        turnedOffGameObjects[indexNumber] = aboutToTurnOff;
     }
 }

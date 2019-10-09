@@ -14,10 +14,12 @@ public class TowerManager : MonoBehaviour
     public List<GameObject> preTowers = new List<GameObject>();
     public List<GameObject> towers = new List<GameObject>();
     public MoneyManager moneyManager;
+    public Manager manager;
 
     public void Start()
     {
-        moneyManager = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
+        manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>();
+        moneyManager = manager.money;
     }
 
     public void BlueprintTower(int newTowerToPlace)
@@ -25,7 +27,9 @@ public class TowerManager : MonoBehaviour
         placing = true;
         towerToPlace = newTowerToPlace;
         Instantiate(preTowers[towerToPlace], placePos, Quaternion.identity);
+        moneyManager.CostPriceUpdate(towers[towerToPlace].GetComponent<OnTower>().cost);
         blueprint = GameObject.FindGameObjectWithTag("TowerA");
+        manager.turnedOffGameObjects[0].SetActive(true);
     }
 
     public void ChangeBluePrintPosition(Vector3 newPos)
@@ -49,12 +53,15 @@ public class TowerManager : MonoBehaviour
             Destroy(blueprint);
             lastPlacedTower = Instantiate(towers[towerToPlace], placePos, Quaternion.identity);
             moneyManager.money -= towers[towerToPlace].GetComponent<OnTower>().cost;
+            moneyManager.UpdateMoneyDisplay();
+            manager.turnedOffGameObjects[0].SetActive(false);
             placing = false;
         }
 
         if (placing == true && Input.GetMouseButtonDown(1))
         {
             placing = false;
+            manager.turnedOffGameObjects[0].SetActive(false);
             Destroy(blueprint);
         }
     }

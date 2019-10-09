@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
     public GameObject[] enemies;
     public GameObject spawner;
+    public Text waveCountdown;
+    public float waveCountdownInt;
+    public int timeBetweenWaves;
     public int enemyAmount;
     public int enemyAmountPlus;
     public int enemySelector;
@@ -21,7 +25,8 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         spawner = GameObject.FindGameObjectWithTag("EnemySpawner");
-        WaveStart();
+        waveCountdown = GameObject.FindGameObjectWithTag("NextWaveCountdown").GetComponent<Text>();
+        //WaveStart();
     }
 
     public void WaveStart()
@@ -49,7 +54,7 @@ public class WaveSpawner : MonoBehaviour
         enemySelector = Random.Range(enemieStrengthGuageMin, enemieStrengthGuageMax);
     }
 
-    public void L()
+    public void EndOfWaveRandom()
     {
         onefive = Random.Range(0, 6);
         fiveTwo = Random.Range(0, 3);
@@ -71,14 +76,29 @@ public class WaveSpawner : MonoBehaviour
     {
         /*if (Input.GetMouseButtonDown(0))
         {
-            L();
+            EndOfWaveRandom();
         }*/
-        if(enemiesSpawnedThisWave == enemyAmount)
+        waveCountdownInt -= Time.deltaTime;
+        waveCountdown.text = "Next Wave:" + Mathf.RoundToInt(waveCountdownInt).ToString();
+        if(waveCountdownInt <= 0)
         {
-            waveActive = false;
-            L();
-            enemiesSpawnedThisWave = 0;
+            EndOfWave();
+            waveCountdownInt = enemyAmount + timeBetweenWaves;
+            StartCoroutine(Wave());
         }
+
+        if (enemiesSpawnedThisWave == enemyAmount)
+        {
+            EndOfWave();
+        }
+        
+    }
+
+    public void EndOfWave()
+    {
+        waveActive = false;
+        EndOfWaveRandom();
+        enemiesSpawnedThisWave = 0;
     }
 }
 /* make a random enemy picker that gets access to more enemies the further you get into the rounds (could also replace old ones with better ones)

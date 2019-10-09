@@ -5,13 +5,14 @@ using UnityEngine;
 public class OpenBuyMenu : MonoBehaviour
 {
     public GameObject buyMenu;
-    // Start is called before the first frame update
+    public Manager manager;
+    
     void Start()
     {
-        buyMenu = GameObject.FindGameObjectWithTag("BuyMenu");
+        manager = GameObject.Find("Manager").GetComponent<Manager>();
+        buyMenu = manager.turnedOffGameObjects[2];
     }
-
-    // Update is called once per frame
+    
     public void Openbuymenu()
     {
         if (buyMenu.activeSelf == false)

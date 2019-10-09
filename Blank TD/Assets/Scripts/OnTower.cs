@@ -6,15 +6,17 @@ public class OnTower : MonoBehaviour
 {
     public int cost;
     public GameObject sellButton;
+    public Manager manager;
     public MoneyManager moneyManager;
     public TowerManager towermanager;
     public bool sellButtonActive;
 
     void Start()
     {
-        moneyManager = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
-        towermanager = GameObject.Find("TowerManager").GetComponent<TowerManager>();
-        sellButton = GameObject.Find("Manager").GetComponent<Manager>().sellButton;
+        manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>();
+        moneyManager = manager.money;
+        towermanager = manager.tower;
+        sellButton = manager.turnedOffGameObjects[1];
     }
 
     void OnMouseOver()
@@ -25,6 +27,7 @@ public class OnTower : MonoBehaviour
             if (sellButtonActive == false)
             {
                 moneyManager.SellPriceUpdate(cost);
+                moneyManager.UpdateMoneyDisplay();
                 sellButton.SetActive(true);
                 sellButtonActive = true;
             }
