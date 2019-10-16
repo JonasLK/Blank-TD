@@ -2065,80 +2065,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1924423862}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &760470802
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 431571588}
-    m_Modifications:
-    - target: {fileID: 8787586873237841836, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: m_Name
-      value: Particle System (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1898809601060749029, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216243155935720199, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216243155935720199, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216243155935720199, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216243155935720199, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216243155935720199, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216243155935720199, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216243155935720199, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216243155935720199, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216243155935720199, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216243155935720199, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2216243155935720199, guid: 6491de21073efe74fb0361b1b17fc20d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6491de21073efe74fb0361b1b17fc20d, type: 3}
 --- !u!1 &772900597
 GameObject:
   m_ObjectHideFlags: 0
@@ -3714,6 +3640,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chain_test
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 637d9ee70c605b941b1b8a65f8ac1ea3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1617365279978105996, guid: 637d9ee70c605b941b1b8a65f8ac1ea3,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -5046,13 +4977,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   chainTarget: {fileID: 0}
-  range: 15
+  range: 20
   attackDelay: 0
-  attackSpeed: 3
-  partic: {fileID: 2102527405}
-  chains: {fileID: 1661107459}
+  attackSpeed: 0
   damage: 0
-  damageChain: 15
+  parti: {fileID: 1661107459}
   enemyTag: Enemy
   Rotatingtop: {fileID: 431571588}
 --- !u!1 &1813673440
@@ -6010,12 +5939,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3501f4351439293449dbd4119e4b47ea, type: 3}
---- !u!198 &2102527405 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1898809601060749029, guid: 6491de21073efe74fb0361b1b17fc20d,
-    type: 3}
-  m_PrefabInstance: {fileID: 760470802}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2106009513
 GameObject:
   m_ObjectHideFlags: 0
@@ -6256,7 +6179,7 @@ MonoBehaviour:
   range: 10
   attackDelay: 0
   attackSpeed: 0
-  damage: 5
+  damage: 2
   parti: {fileID: 1136040512}
   enemyTag: Enemy
   Rotatingtop: {fileID: 1440758278532797288}

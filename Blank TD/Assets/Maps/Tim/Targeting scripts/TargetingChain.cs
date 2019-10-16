@@ -1,19 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class TargetingChain : MonoBehaviour
 {
     public Transform target;
+    public Transform chainTarget;
     public float range = 20f;
     public float attackDelay;
     public float attackSpeed;
-    public ParticleSystem partic;
-    public ParticleSystem chains;
     public float damage;
-    public float damageChain;
-
+    public ParticleSystem parti;
     public string enemyTag = "Enemy";
 
     public Transform Rotatingtop;
@@ -39,6 +36,7 @@ public class TargetingChain : MonoBehaviour
             if (nearestEnemy != null && shortestDistance <= range)
             {
                 target = nearestEnemy.transform;
+                ChainDamg();
             }
             else
             {
@@ -74,36 +72,7 @@ public class TargetingChain : MonoBehaviour
     void Attack()
     {
         target.GetComponentInParent<Health>().Damage(damage);
-        partic.Play();
-
-    }
-
-    public void ChainDamg(Transform pivot, float damg, int jumpsLeft)
-    {
-        // Do damg, check if dead. done
-        // Make sure you do the next, even if dead == true.
-        // Check targets in range of pivot.
-        // Get closest target.
-        // Call ChainDamg for that closest target, reduce jumpsLeft with 1;
-
-        //var nClosest = myTransforms.OrderBy(t => (t.position - referencePos).sqrMagnitude)
-        //                   .Take(3)   //or use .FirstOrDefault();  if you need just one
-        //                   .ToArray(); Transform GetClosestEnemy(Transform[] enemies)
-        //{
-        //    Transform tMin = null;
-        //    float minDist = Mathf.Infinity;
-        //    Vector3 currentPos = transform.position;
-        //    foreach (Transform t in enemies)
-        //    {
-        //        float dist = Vector3.Distance(t.position, currentPos);
-        //        if (dist < minDist)
-        //        {
-        //            tMin = t;
-        //            minDist = dist;
-        //        }
-        //    }
-        //    return tMin;
-        //}
+        parti.Play();
     }
 
     private void OnDrawGizmosSelected()
@@ -111,4 +80,20 @@ public class TargetingChain : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, range);
     }
 
+    public void ChainDamg()
+    {
+        // Do damg, check if dead. done
+        // Make sure you do the next, even if dead == true.
+        // Check targets in range of pivot.
+        // Get closest target.
+        // Call ChainDamg for that closest target, reduce jumpsLeft with 1
+
+
+        chainTarget = target;
+        
+
+    }
+    
 }
+
+
