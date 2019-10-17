@@ -7,6 +7,6 @@ public class StartGame : MonoBehaviour
 {
     public void ChangeMenuScene(string sceneName)
     {
-        SceneManager.LoadScene("Terain");
+        SceneManager.LoadScene("Level1");
     }
 }
