@@ -15,10 +15,53 @@ public class TowerManager : MonoBehaviour
     public List<GameObject> towers = new List<GameObject>();
     public MoneyManager moneyManager;
     public Manager manager;
+    public bool noFakeStart;
 
     public void Start()
     {
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>();
+    }
+
+    public void Update()
+    {
+        if (noFakeStart == false)
+        {
+            if (manager.arrayFilled == true)
+            {
+                FakeStart();
+                noFakeStart = true;
+            }
+        }
+        if(placing == true && Input.GetMouseButtonDown(0))
+        {
+            if(moneyManager.money >= towers[towerToPlace].GetComponent<OnTower>().cost)
+            {
+                if(lastHoveredNode.GetComponent<BuildingCheck>().occupied == false)
+                {
+                    Destroy(blueprint);
+                    lastPlacedTower = Instantiate(towers[towerToPlace], placePos, Quaternion.identity);
+                    moneyManager.money -= towers[towerToPlace].GetComponent<OnTower>().cost;
+                    moneyManager.UpdateMoneyDisplay();
+                    manager.turnedOffGameObjects[0].SetActive(false);
+                    placing = false;
+                }
+            }
+            else
+            {
+                Destroy(blueprint);
+            }
+        }
+
+        if (placing == true && Input.GetMouseButtonDown(1))
+        {
+            placing = false;
+            manager.turnedOffGameObjects[0].SetActive(false);
+            Destroy(blueprint);
+        }
+    }
+
+    public void FakeStart()
+    {
         moneyManager = manager.money;
     }
 
@@ -35,7 +78,7 @@ public class TowerManager : MonoBehaviour
     public void ChangeBluePrintPosition(Vector3 newPos)
     {
         placePos = newPos;
-        if(placing == true)
+        if(placing == true && blueprint != null)
         {
             blueprint.transform.position = newPos;
         }
@@ -44,25 +87,5 @@ public class TowerManager : MonoBehaviour
     public void SellingTower(GameObject sellingTower)
     {
         lastSellingTower = sellingTower;
-    }
-
-    public void Update()
-    {
-        if(placing == true && Input.GetMouseButtonDown(0) && moneyManager.money >= towers[towerToPlace].GetComponent<OnTower>().cost && lastHoveredNode.GetComponent<BuildingCheck>().occupied == false)
-        {
-            Destroy(blueprint);
-            lastPlacedTower = Instantiate(towers[towerToPlace], placePos, Quaternion.identity);
-            moneyManager.money -= towers[towerToPlace].GetComponent<OnTower>().cost;
-            moneyManager.UpdateMoneyDisplay();
-            manager.turnedOffGameObjects[0].SetActive(false);
-            placing = false;
-        }
-
-        if (placing == true && Input.GetMouseButtonDown(1))
-        {
-            placing = false;
-            manager.turnedOffGameObjects[0].SetActive(false);
-            Destroy(blueprint);
-        }
     }
 }

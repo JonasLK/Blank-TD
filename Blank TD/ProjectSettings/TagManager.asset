@@ -17,6 +17,9 @@ TagManager:
   - Explosive
   - Manager
   - NextWaveCountdown
+  - MoneyManager
+  - SnapManager
+  - TowerManager
   layers:
   - Default
   - TransparentFX

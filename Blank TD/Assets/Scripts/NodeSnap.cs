@@ -14,8 +14,8 @@ public class NodeSnap : MonoBehaviour
     {
         mater = GetComponent<Renderer>().material;
         ogColor = mater.color;
-        snapManager = GameObject.Find("SnapManager").GetComponent<SnapManager>();
         ownBuildingCheck = gameObject.GetComponent<BuildingCheck>();
+        snapManager = GameObject.FindGameObjectWithTag("SnapManager").GetComponent<SnapManager>();
     }
 
     void OnMouseEnter()

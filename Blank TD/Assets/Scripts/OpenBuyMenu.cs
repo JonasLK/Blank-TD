@@ -6,10 +6,27 @@ public class OpenBuyMenu : MonoBehaviour
 {
     public GameObject buyMenu;
     public Manager manager;
-    
-    void Start()
+    public bool noFakeStart;
+
+    public void Start()
     {
-        manager = GameObject.Find("Manager").GetComponent<Manager>();
+        manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>();
+    }
+
+    public void Update()
+    {
+        if(noFakeStart == false)
+        {
+            if (manager.arrayFilled == true)
+            {
+                FakeStart();
+                noFakeStart = true;
+            }
+        }
+    }
+
+    void FakeStart()
+    {
         buyMenu = manager.turnedOffGameObjects[2];
     }
     

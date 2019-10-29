@@ -25,15 +25,14 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         spawner = GameObject.FindGameObjectWithTag("EnemySpawner");
-        //waveCountdown = GameObject.FindGameObjectWithTag("NextWaveCountdown").GetComponent<Text>();
-        WaveStart();
+        waveCountdown = GameObject.FindGameObjectWithTag("NextWaveCountdown").GetComponent<Text>();
     }
 
     public void WaveStart()
     {
         if(waveActive == false)
         {
-            StartCoroutine(Wave());
+            waveCountdownInt = 0;
         }
     }
     
@@ -74,23 +73,23 @@ public class WaveSpawner : MonoBehaviour
 
     public void Update()
     {
-        /*if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             EndOfWaveRandom();
-        }*/
-        //waveCountdownInt -= Time.deltaTime;
-        //waveCountdown.text = "Next Wave:" + Mathf.RoundToInt(waveCountdownInt).ToString();
-        //if(waveCountdownInt <= 0)
-        //{
-        //    EndOfWave();
-        //    waveCountdownInt = enemyAmount + timeBetweenWaves;
-        //    StartCoroutine(Wave());
-        //}
+        }
+        waveCountdownInt -= Time.deltaTime;
+        waveCountdown.text = "Next Wave:" + Mathf.RoundToInt(waveCountdownInt).ToString();
+        if(waveCountdownInt <= 0)
+        {
+            EndOfWave();
+            waveCountdownInt = enemyAmount + timeBetweenWaves;
+            StartCoroutine(Wave());
+        }
 
-        //if (enemiesSpawnedThisWave == enemyAmount)
-        //{
-        //    EndOfWave();
-        //}
+        if (enemiesSpawnedThisWave == enemyAmount)
+        {
+            EndOfWave();
+        }
         
     }
 

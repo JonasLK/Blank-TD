@@ -14,15 +14,33 @@ public class MoneyManager : MonoBehaviour
     public float money = 100;
     public float sellPrice;
     public int buyPrice;
+    public bool noFakeStart;
 
-    void Start()
+    public void Start()
     {
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>();
+    }
+
+    public void Update()
+    {
+        if (noFakeStart == false)
+        {
+            if (manager.arrayFilled == true)
+            {
+                FakeStart();
+                noFakeStart = true;
+            }
+        }
+    }
+
+    void FakeStart()
+    {
         moneyDisplay = GameObject.Find("MoneyDisplay").GetComponent<Text>();
         sellButton = manager.turnedOffGameObjects[1];
         sellButtonDisplay = sellButton.GetComponentInChildren<Text>();
         towerManager = manager.tower;
         buyPriceDisplay = manager.turnedOffGameObjects[0].GetComponent<Text>();
+        UpdateMoneyDisplay();
     }
 
     public void UpdateMoneyDisplay()
@@ -40,6 +58,7 @@ public class MoneyManager : MonoBehaviour
     {
         Destroy(towerManager.lastSellingTower);
         money += sellPrice;
+        UpdateMoneyDisplay();
         sellButton.SetActive(false);
     }
 

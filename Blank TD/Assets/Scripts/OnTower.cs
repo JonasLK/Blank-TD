@@ -10,10 +10,27 @@ public class OnTower : MonoBehaviour
     public MoneyManager moneyManager;
     public TowerManager towermanager;
     public bool sellButtonActive;
+    public bool noFakeStart;
 
-    void Start()
+    public void Start()
     {
         manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>();
+    }
+
+    public void Update()
+    {
+        if (noFakeStart == false)
+        {
+            if (manager.arrayFilled == true)
+            {
+                FakeStart();
+                noFakeStart = true;
+            }
+        }
+    }
+
+    void FakeStart()
+    {
         moneyManager = manager.money;
         towermanager = manager.tower;
         sellButton = manager.turnedOffGameObjects[1];

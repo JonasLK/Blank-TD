@@ -440,6 +440,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   turndeOffGameObjectsIndicator: 0
+  arrayFilled: 0
 --- !u!4 &201697875
 Transform:
   m_ObjectHideFlags: 0
@@ -452,7 +453,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &252195879
 GameObject:
@@ -905,6 +906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buyMenu: {fileID: 0}
   manager: {fileID: 0}
+  noFakeStart: 0
 --- !u!114 &514829351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1106,7 +1108,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &618820398
 MonoBehaviour:
@@ -1302,12 +1304,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718175538}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772783516
 GameObject:
@@ -1448,7 +1450,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: b6afbf6504418ba459e6fb887d2f7174,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b6afbf6504418ba459e6fb887d2f7174,
         type: 3}
@@ -1911,7 +1913,7 @@ Transform:
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1544287733
 GameObject:
@@ -1995,7 +1997,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1544287737
 MonoBehaviour:
@@ -2024,7 +2026,7 @@ GameObject:
   - component: {fileID: 1636857193}
   m_Layer: 0
   m_Name: SnapManager
-  m_TagString: Untagged
+  m_TagString: SnapManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2041,7 +2043,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1636857193
 MonoBehaviour:
@@ -2293,7 +2295,7 @@ GameObject:
   - component: {fileID: 1924242250}
   m_Layer: 0
   m_Name: TowerManager
-  m_TagString: Untagged
+  m_TagString: TowerManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2327,6 +2329,7 @@ MonoBehaviour:
   - {fileID: 0}
   moneyManager: {fileID: 0}
   manager: {fileID: 0}
+  noFakeStart: 0
 --- !u!4 &1924242251
 Transform:
   m_ObjectHideFlags: 0
@@ -2339,7 +2342,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1925815368
 GameObject:
@@ -2592,7 +2595,7 @@ GameObject:
   - component: {fileID: 1984407584}
   m_Layer: 0
   m_Name: MoneyManager
-  m_TagString: Untagged
+  m_TagString: MoneyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -2609,7 +2612,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1984407584
 MonoBehaviour:
@@ -2632,6 +2635,7 @@ MonoBehaviour:
   money: 100
   sellPrice: 0
   buyPrice: 0
+  noFakeStart: 0
 --- !u!1 &2019984061
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,7 +2725,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &2065563609
 GameObject:
@@ -2945,6 +2949,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Capsule
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392173661684864362, guid: 9e385f56f8b90b04ab13867f9c94b0ed,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7392173661684864367, guid: 9e385f56f8b90b04ab13867f9c94b0ed,
         type: 3}
