@@ -20,6 +20,7 @@ TagManager:
   - MoneyManager
   - SnapManager
   - TowerManager
+  - Base
   layers:
   - Default
   - TransparentFX
