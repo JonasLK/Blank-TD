@@ -53,7 +53,7 @@ public class Targeting : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = lookRotation.eulerAngles;
-        Rotatingtop.rotation = Quaternion.Euler(90f, rotation.y, 0f);
+        Rotatingtop.rotation = Quaternion.Euler(90f, rotation.y +0f, 90f);
     
         if (target != null)
         {

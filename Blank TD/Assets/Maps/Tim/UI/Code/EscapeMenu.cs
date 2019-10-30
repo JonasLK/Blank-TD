@@ -22,15 +22,11 @@ public class EscapeMenu : MonoBehaviour
             {
                 Escape.SetActive(true);
                 EscapeOpen = true;
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
             }
             else
             {
                 Escape.SetActive(false);
-                EscapeOpen = false;
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
+                EscapeOpen = false; 
             }
         }
     }

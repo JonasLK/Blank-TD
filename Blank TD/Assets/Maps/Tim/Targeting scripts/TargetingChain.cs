@@ -54,7 +54,7 @@ public class TargetingChain : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = lookRotation.eulerAngles;
-        Rotatingtop.rotation = Quaternion.Euler(0f, rotation.y + 90f, 0f);
+        Rotatingtop.rotation = Quaternion.Euler(0f, rotation.y + 0f, 90f);
 
         if (target != null)
         {
