@@ -1612,7 +1612,7 @@ GameObject:
   - component: {fileID: -9197427184985747776}
   m_Layer: 0
   m_Name: HoverGolem
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1644,7 +1644,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 47308d27c2601fd4e95c8152487814f2, type: 3}
   m_Controller: {fileID: 0}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -1679,6 +1679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  damage: 0
   healthbarfab: {fileID: 7271140008606572334, guid: 5ce3e4ed4f20f624c8e4d4bf78ca5c5d,
     type: 3}
 --- !u!1 &1788973806152929773

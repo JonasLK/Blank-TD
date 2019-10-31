@@ -9800,7 +9800,7 @@ GameObject:
   - component: {fileID: -7720222451308962301}
   m_Layer: 0
   m_Name: Golem
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9833,7 +9833,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0c450cc3cc52457408dc04fbf6db8bc0, type: 3}
   m_Controller: {fileID: 0}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -9855,6 +9855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 150
   currentHealth: 150
+  damage: 0
   healthbarfab: {fileID: 7271140008606572334, guid: 5ce3e4ed4f20f624c8e4d4bf78ca5c5d,
     type: 3}
 --- !u!114 &-7720222451308962301
