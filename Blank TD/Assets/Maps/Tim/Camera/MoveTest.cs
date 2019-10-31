@@ -13,7 +13,7 @@ public class MoveTest : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         Vector3 pos1 = transform.position;
