@@ -11,18 +11,38 @@ public class BaseHealth : MonoBehaviour
     private int baseHealthInt;
     public GameObject healthAndText;
     public GameObject defeatScreen;
+    public GameObject defeatScreenParent;
     public Transform healthBar;
     public Text healthText;
     public Manager manager;
+    public bool noFakeStart;
 
     public void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("DefeatScreen").GetComponent<Manager>();
+        manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>();
+        defeatScreenParent = GameObject.FindGameObjectWithTag("DefeatScreen");
         healthAndText = GameObject.FindGameObjectWithTag("HealthAndText");
         baseHealth = maxBasehealth;
         healthBar = healthAndText.transform.GetChild(0);
         healthText = healthAndText.GetComponentInChildren<Text>();
         healthScale = 1;
+    }
+
+    public void Update()
+    {
+        if (noFakeStart == false)
+        {
+            if (manager.arrayFilled == true)
+            {
+                FakeStart();
+                noFakeStart = true;
+            }
+        }
+    }
+
+    public void FakeStart()
+    {
+        defeatScreen = manager.turnedOffGameObjects[3];
     }
 
     public void Damage(float enemyDamage)
@@ -53,7 +73,9 @@ public class BaseHealth : MonoBehaviour
 
     public void Defeat()
     {
+        defeatScreen.SetActive(true);
+        GameObject.FindGameObjectWithTag("OtherCanvas").SetActive(false);
         Time.timeScale = 0;
-        manager.turnedOffGameObjects[4].SetActive(true);
+        defeatScreenParent.GetComponent<DefeatScreen>().UpdateRoundsSurvived();
     }
 }

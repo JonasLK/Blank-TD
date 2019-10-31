@@ -9,6 +9,7 @@ public class WaveSpawner : MonoBehaviour
     public GameObject spawner;
     public Text waveCountdown;
     public float waveCountdownInt;
+    public int waveCounter;
     public int timeBetweenWaves;
     public int enemyAmount;
     public int enemyAmountPlus;
@@ -26,6 +27,7 @@ public class WaveSpawner : MonoBehaviour
     {
         spawner = GameObject.FindGameObjectWithTag("EnemySpawner");
         waveCountdown = GameObject.FindGameObjectWithTag("NextWaveCountdown").GetComponent<Text>();
+        waveCounter = 1;
     }
 
     public void WaveStart()
@@ -46,6 +48,7 @@ public class WaveSpawner : MonoBehaviour
             Instantiate(enemies[enemySelector], spawner.transform.position, Quaternion.identity);
             yield return new WaitForSeconds(secondsBetweenEnemySpawns);
         }
+        waveCounter += 1;
     }
 
     public void EnemySelect()

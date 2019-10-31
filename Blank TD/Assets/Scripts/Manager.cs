@@ -7,7 +7,6 @@ public class Manager : MonoBehaviour
     public MoneyManager money;
     public TowerManager tower;
     public SnapManager snap;
-    public GameObject sellButton;
     public GameObject[] turnedOffGameObjects;
     public int turndeOffGameObjectsIndicator;
     public bool arrayFilled;
@@ -26,7 +25,7 @@ public class Manager : MonoBehaviour
 
     public void Update()
     {
-        if(turnedOffGameObjects[0] != null && turnedOffGameObjects[1] != null && turnedOffGameObjects[2] != null)
+        if(turnedOffGameObjects[0] != null && turnedOffGameObjects[1] != null && turnedOffGameObjects[2] != null && turnedOffGameObjects[3] != null)
         {
             arrayFilled = true;
         }

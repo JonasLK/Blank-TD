@@ -14,14 +14,14 @@ public class Health : MonoBehaviour
     GameObject handy;
     Image handyImg;
 
-    public void Start()
-    {
+public void Start()
+{
         currentHealth = maxHealth;
         handy = Instantiate(healthbarfab, Vector3.zero, Quaternion.identity);
         handy.transform.SetParent(UIManager.healthCanvas.transform);
         handyImg = handy.transform.Find("HealthBar").transform.Find("HealthBarEmpty").GetComponent<Image>();
     }
-
+    
     public void Update()
     {
         if (Input.GetButtonDown("Jump"))
@@ -46,10 +46,10 @@ public class Health : MonoBehaviour
         }
     }
 
-   void Death()
+    void Death()
     {
         Destroy(gameObject);
-        Destroy(handy);
+        //Destroy(handy);
     }
 
     public void OnTriggerEnter(Collider o)

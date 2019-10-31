@@ -23,6 +23,9 @@ TagManager:
   - Base
   - HealthAndText
   - DefeatScreen
+  - PreTower
+  - WaveManager
+  - OtherCanvas
   layers:
   - Default
   - TransparentFX
