@@ -21,6 +21,8 @@ TagManager:
   - SnapManager
   - TowerManager
   - Base
+  - HealthAndText
+  - DefeatScreen
   layers:
   - Default
   - TransparentFX

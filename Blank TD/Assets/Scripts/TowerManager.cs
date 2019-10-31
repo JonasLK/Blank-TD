@@ -71,7 +71,7 @@ public class TowerManager : MonoBehaviour
         towerToPlace = newTowerToPlace;
         Instantiate(preTowers[towerToPlace], placePos, Quaternion.identity);
         moneyManager.CostPriceUpdate(towers[towerToPlace].GetComponent<OnTower>().cost);
-        blueprint = GameObject.FindGameObjectWithTag("TowerA");
+        blueprint = GameObject.FindGameObjectWithTag("PreTower");
         manager.turnedOffGameObjects[0].SetActive(true);
     }
 
@@ -80,7 +80,7 @@ public class TowerManager : MonoBehaviour
         placePos = newPos;
         if(placing == true && blueprint != null)
         {
-            blueprint.transform.position = newPos;
+            blueprint.transform.position = placePos;
         }
     }
 
