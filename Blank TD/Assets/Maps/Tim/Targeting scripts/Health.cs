@@ -49,7 +49,7 @@ public void Start()
     void Death()
     {
         Destroy(gameObject);
-        //Destroy(handy);
+        Destroy(handy);
     }
 
     public void OnTriggerEnter(Collider o)
