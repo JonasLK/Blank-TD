@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    private Manager manager;
+    private MoneyManager money;
 
+    public int deathValue;
     public float maxHealth;
     public float currentHealth;
     public float damage;
@@ -16,6 +19,8 @@ public class Health : MonoBehaviour
 
     public void Start()
     {
+        manager = GameObject.FindGameObjectWithTag("Manager").GetComponent<Manager>();
+        money = manager.money;
         currentHealth = maxHealth;
         handy = Instantiate(healthbarfab, Vector3.zero, Quaternion.identity);
         handy.transform.SetParent(UIManager.healthCanvas.transform);
@@ -48,8 +53,10 @@ public class Health : MonoBehaviour
 
     void Death()
     {
-        Destroy(gameObject);
+        money.money += deathValue;
+        money.UpdateMoneyDisplay();
         Destroy(handy);
+        Destroy(gameObject);
     }
 
     public void OnTriggerEnter(Collider o)

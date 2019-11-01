@@ -11,7 +11,7 @@ public class MoneyManager : MonoBehaviour
     public Text moneyDisplay;
     public Text sellButtonDisplay;
     public Text buyPriceDisplay;
-    public float money = 100;
+    public float money;
     public float sellPrice;
     public int buyPrice;
     public bool noFakeStart;
