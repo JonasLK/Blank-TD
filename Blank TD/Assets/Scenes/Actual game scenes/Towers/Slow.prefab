@@ -88,6 +88,8 @@ GameObject:
   - component: {fileID: 6126790395153779177}
   - component: {fileID: 1187841623429685900}
   - component: {fileID: 1187841623429685901}
+  - component: {fileID: 5455705579733694389}
+  - component: {fileID: -2651112717114322638}
   m_Layer: 0
   m_Name: Slow
   m_TagString: Untagged
@@ -142,6 +144,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa5785ce664c45b5be0a81e7bb130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5455705579733694389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7160128296112126970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97324c822d8e8e04785d20b783f28960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
+  range: 0
+  attackSpeed: 0
+  slowTime: 0
+  slowAmount: 0
+  damage: 0
+--- !u!135 &-2651112717114322638
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7160128296112126970}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8888996772451717364
 GameObject:
   m_ObjectHideFlags: 0
