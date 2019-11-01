@@ -45,7 +45,7 @@ public class WaveSpawner : MonoBehaviour
         {
             enemiesSpawnedThisWave += 1;
             EnemySelect();
-            Instantiate(enemies[enemySelector], spawner.transform.position, Quaternion.identity);
+            Instantiate(enemies[enemySelector], spawner.transform.position, enemies[enemySelector].transform.rotation);         
             yield return new WaitForSeconds(secondsBetweenEnemySpawns);
         }
         waveCounter += 1;
