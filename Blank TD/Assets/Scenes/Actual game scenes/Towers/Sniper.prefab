@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 7803353970497453973}
   - component: {fileID: 2968331583701064167}
   - component: {fileID: 1800405359573534420}
+  - component: {fileID: 5520987424944105786}
   m_Layer: 0
   m_Name: Sniper
   m_TagString: Untagged
@@ -221,3 +222,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa5785ce664c45b5be0a81e7bb130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5520987424944105786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6489771516924038534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160971766b8a6e04ab290270bd923093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 0
+  sellButton: {fileID: 0}
+  manager: {fileID: 0}
+  moneyManager: {fileID: 0}
+  towermanager: {fileID: 0}
+  sellButtonActive: 0
+  noFakeStart: 0

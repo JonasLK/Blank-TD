@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 1175491549040062585}
   - component: {fileID: 6136888533332533170}
   - component: {fileID: 6136888533332533171}
+  - component: {fileID: 2449864745905578750}
   m_Layer: 0
   m_Name: basic (2)
   m_TagString: Untagged
@@ -144,6 +145,25 @@ MonoBehaviour:
   damage: 34
   enemyTag: Enemy
   Rotatingtop: {fileID: 6423981262631751149}
+--- !u!114 &2449864745905578750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2741415146526556778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160971766b8a6e04ab290270bd923093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 0
+  sellButton: {fileID: 0}
+  manager: {fileID: 0}
+  moneyManager: {fileID: 0}
+  towermanager: {fileID: 0}
+  sellButtonActive: 0
+  noFakeStart: 0
 --- !u!1 &4470556301629270372
 GameObject:
   m_ObjectHideFlags: 0

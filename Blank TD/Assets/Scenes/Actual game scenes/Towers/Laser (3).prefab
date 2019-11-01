@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1265229613617273465}
   - component: {fileID: 2870383378847279208}
   - component: {fileID: 2870383378847279209}
+  - component: {fileID: -5964391629197514371}
   m_Layer: 0
   m_Name: Laser (3)
   m_TagString: Untagged
@@ -66,6 +67,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4aa5785ce664c45b5be0a81e7bb130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5964391629197514371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2870383378847279210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160971766b8a6e04ab290270bd923093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 0
+  sellButton: {fileID: 0}
+  manager: {fileID: 0}
+  moneyManager: {fileID: 0}
+  towermanager: {fileID: 0}
+  sellButtonActive: 0
+  noFakeStart: 0
 --- !u!1 &4198097187494993663
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +331,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 8346990132451690491, guid: be00593ecd3f7024880a08858304ef89,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346990132451690491, guid: be00593ecd3f7024880a08858304ef89,
+        type: 3}
+      propertyPath: LightsModule.intensityCurve.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2036429016782231206, guid: be00593ecd3f7024880a08858304ef89,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -380,16 +410,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.8297087
-      objectReference: {fileID: 0}
-    - target: {fileID: 8346990132451690491, guid: be00593ecd3f7024880a08858304ef89,
-        type: 3}
-      propertyPath: moveWithTransform
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8346990132451690491, guid: be00593ecd3f7024880a08858304ef89,
-        type: 3}
-      propertyPath: LightsModule.intensityCurve.scalar
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be00593ecd3f7024880a08858304ef89, type: 3}
