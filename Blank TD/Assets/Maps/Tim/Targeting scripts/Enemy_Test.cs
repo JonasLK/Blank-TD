@@ -4,10 +4,14 @@ public class Enemy_Test : MonoBehaviour
 {
 
     public float speed = 10f;
+    private float slow = 1f;
 
 
     private Transform target;
     private int wavepointIndex = 0;
+    private bool slowed;
+    private float slowTimer;
+    private float slowTimeAmount;
 
 
     private void Start()
@@ -18,11 +22,21 @@ public class Enemy_Test : MonoBehaviour
     private void Update()
     {
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        transform.Translate(dir.normalized * speed * slow * Time.deltaTime, Space.World);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.4f)
         {
             GetNextWavepoint();
+        }
+
+        if(slowed == true)
+        {
+            slowTimer += Time.deltaTime;
+            if(slowTimer >= slowTimeAmount)
+            {
+                slowed = false;
+                slow = 1f;
+            }
         }
     }
 
@@ -37,4 +51,10 @@ public class Enemy_Test : MonoBehaviour
         target = Waypoints.points[wavepointIndex];
     }
 
+    public void Slowed(float timeSlowed, float slowAmount)
+    {
+        slowTimeAmount = timeSlowed;
+        slowed = true;
+        slow = slowAmount;
+    }
 }

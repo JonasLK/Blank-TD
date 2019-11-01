@@ -81,7 +81,7 @@ public class WaveSpawner : MonoBehaviour
             EndOfWaveRandom();
         }
         waveCountdownInt -= Time.deltaTime;
-        waveCountdown.text = "Next Wave:" + Mathf.RoundToInt(waveCountdownInt).ToString();
+        waveCountdown.text = "Next Wave: " + Mathf.RoundToInt(waveCountdownInt).ToString();
         if(waveCountdownInt <= 0)
         {
             EndOfWave();
@@ -105,4 +105,5 @@ public class WaveSpawner : MonoBehaviour
 }
 /* make a random enemy picker that gets access to more enemies the further you get into the rounds (could also replace old ones with better ones)
  * also need to increase amount of enemies
+ * waveCountdown.text = "Wave " + wavecounter.ToString() + "in: " + Mathf.RoundToInt(waveCountdownInt).ToString();
 */

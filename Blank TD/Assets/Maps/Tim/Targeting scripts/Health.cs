@@ -14,8 +14,8 @@ public class Health : MonoBehaviour
     GameObject handy;
     Image handyImg;
 
-public void Start()
-{
+    public void Start()
+    {
         currentHealth = maxHealth;
         handy = Instantiate(healthbarfab, Vector3.zero, Quaternion.identity);
         handy.transform.SetParent(UIManager.healthCanvas.transform);
@@ -58,6 +58,19 @@ public void Start()
         {
             o.gameObject.GetComponent<BaseHealth>().Damage(damage);
             Death();
+        }
+
+        if(o.gameObject.tag == "SlowTower")
+        {
+            o.gameObject.GetComponent<SlowTower>().AddTarget(gameObject);
+        }
+    }
+
+    public void OnTriggerExit(Collider o)
+    {
+        if (o.gameObject.tag == "SlowTower")
+        {
+            o.gameObject.GetComponent<SlowTower>().RemoveTarget(gameObject);
         }
     }
 }
