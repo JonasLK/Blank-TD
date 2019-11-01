@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &830980769216005814
+--- !u!1 &813638118240724795
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4664698979267708923}
-  - component: {fileID: 6507122334750203829}
-  - component: {fileID: 6294985196344289803}
+  - component: {fileID: 4647420233610995318}
+  - component: {fileID: 6525524940474711608}
+  - component: {fileID: 6313735217673145222}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -18,35 +18,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4664698979267708923
+--- !u!4 &4647420233610995318
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830980769216005814}
+  m_GameObject: {fileID: 813638118240724795}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 3.0171306, z: 0}
+  m_LocalPosition: {x: 0.000053377695, y: 3.0391405, z: -0.053863533}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7803353970497453973}
+  m_Father: {fileID: 7820982347697479192}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6507122334750203829
+--- !u!33 &6525524940474711608
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830980769216005814}
-  m_Mesh: {fileID: -5495902117074765545, guid: 2e2c329b4746d0142a5a0eff3830a154, type: 3}
---- !u!23 &6294985196344289803
+  m_GameObject: {fileID: 813638118240724795}
+  m_Mesh: {fileID: -5495902117074765545, guid: 10cd7edeed6850d45a2aac49039f7487, type: 3}
+--- !u!23 &6313735217673145222
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830980769216005814}
+  m_GameObject: {fileID: 813638118240724795}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1472d595aef361047bf5a77301521f2c, type: 2}
+  - {fileID: 670224309865224971, guid: 10cd7edeed6850d45a2aac49039f7487, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,7 +77,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &4760763334018262664
+--- !u!1 &4815194706392991493
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,9 +85,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6928532331872363605}
-  - component: {fileID: 2012426276425156551}
-  - component: {fileID: 5052237152252292864}
+  - component: {fileID: 6982185155829302744}
+  - component: {fileID: 1958837262561207882}
+  - component: {fileID: 5106947809441926797}
   m_Layer: 0
   m_Name: Icosphere
   m_TagString: Untagged
@@ -95,35 +95,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6928532331872363605
+--- !u!4 &6982185155829302744
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4760763334018262664}
-  m_LocalRotation: {x: -0.00000005760116, y: -0.70710677, z: -0.000000057601152, w: 0.7071068}
-  m_LocalPosition: {x: 0.00000004768371, y: -0.98248017, z: 0}
+  m_GameObject: {fileID: 4815194706392991493}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00005433137, y: -0.98207945, z: -0.02744851}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7803353970497453973}
+  m_Father: {fileID: 7820982347697479192}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2012426276425156551
+--- !u!33 &1958837262561207882
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4760763334018262664}
-  m_Mesh: {fileID: 289301614986012343, guid: 2e2c329b4746d0142a5a0eff3830a154, type: 3}
---- !u!23 &5052237152252292864
+  m_GameObject: {fileID: 4815194706392991493}
+  m_Mesh: {fileID: 289301614986012343, guid: 10cd7edeed6850d45a2aac49039f7487, type: 3}
+--- !u!23 &5106947809441926797
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4760763334018262664}
+  m_GameObject: {fileID: 4815194706392991493}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -134,7 +134,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 2e2c329b4746d0142a5a0eff3830a154, type: 3}
+  - {fileID: 670224309865224971, guid: 10cd7edeed6850d45a2aac49039f7487, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,7 +154,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &6489771516924038534
+--- !u!1 &6544556932039781387
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,82 +162,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7803353970497453973}
-  - component: {fileID: 2968331583701064167}
-  - component: {fileID: 1800405359573534420}
-  - component: {fileID: 5520987424944105786}
+  - component: {fileID: 7820982347697479192}
   m_Layer: 0
-  m_Name: Sniper
-  m_TagString: Untagged
+  m_Name: New Laser
+  m_TagString: PreTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7803353970497453973
+--- !u!4 &7820982347697479192
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6489771516924038534}
+  m_GameObject: {fileID: 6544556932039781387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 371.63348, y: 8.3, z: 409.50787}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4664698979267708923}
-  - {fileID: 6928532331872363605}
+  - {fileID: 4647420233610995318}
+  - {fileID: 6982185155829302744}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2968331583701064167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6489771516924038534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27774c6d97b50a74f8c34172216d736b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  chainTarget: {fileID: 0}
-  range: 250
-  attackDelay: 1
-  attackSpeed: 2
-  damage: 100
-  parti: {fileID: 0}
-  enemyTag: Enemy
-  Rotatingtop: {fileID: 4664698979267708923}
---- !u!114 &1800405359573534420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6489771516924038534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c4aa5785ce664c45b5be0a81e7bb130, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5520987424944105786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6489771516924038534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 160971766b8a6e04ab290270bd923093, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 0
-  sellButton: {fileID: 0}
-  manager: {fileID: 0}
-  moneyManager: {fileID: 0}
-  towermanager: {fileID: 0}
-  sellButtonActive: 0
-  noFakeStart: 0
