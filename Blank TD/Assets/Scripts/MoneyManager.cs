@@ -35,7 +35,7 @@ public class MoneyManager : MonoBehaviour
 
     void FakeStart()
     {
-        moneyDisplay = GameObject.Find("MoneyDisplay").GetComponent<Text>();
+        moneyDisplay = GameObject.Find("Currency").GetComponentInChildren<Text>();
         sellButton = manager.turnedOffGameObjects[1];
         sellButtonDisplay = sellButton.GetComponentInChildren<Text>();
         towerManager = manager.tower;

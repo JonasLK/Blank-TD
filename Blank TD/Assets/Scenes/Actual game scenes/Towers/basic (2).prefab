@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160971766b8a6e04ab290270bd923093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 40
   sellButton: {fileID: 0}
   manager: {fileID: 0}
   moneyManager: {fileID: 0}

@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160971766b8a6e04ab290270bd923093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
+  cost: 30
   sellButton: {fileID: 0}
   manager: {fileID: 0}
   moneyManager: {fileID: 0}
@@ -157,11 +157,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInRange: []
-  range: 0
-  attackSpeed: 0
-  slowTime: 0
-  slowAmount: 0
-  damage: 0
+  range: 40
+  attackSpeed: 3
+  slowTime: 2
+  slowAmount: 0.4
+  damage: 20
 --- !u!135 &-2651112717114322638
 SphereCollider:
   m_ObjectHideFlags: 0

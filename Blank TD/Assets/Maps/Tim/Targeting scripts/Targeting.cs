@@ -8,7 +8,7 @@ public class Targeting : MonoBehaviour
     public float range = 20f;
     public float attackDelay;
     public float attackSpeed;
-    public ParticleSystem partic;
+    //public ParticleSystem partic;
     public float damage;
 
     public string enemyTag = "Enemy";
@@ -71,7 +71,7 @@ public class Targeting : MonoBehaviour
     void Attack()
     {
         target.GetComponentInParent<Health>().Damage(damage);
-        partic.Play();
+        //partic.Play();
 
     }
 
